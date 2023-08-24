@@ -3,7 +3,7 @@ const router = express.Router();
 
 const test = require('./../functions/Test/test');
 
-router.get('/testInventory', (req, res) => {
+router.get('/testGateway', (req, res) => {
     test(req, res);
 });
 

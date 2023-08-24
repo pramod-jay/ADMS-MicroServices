@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "47435beb-cf8c-4e81-a273-004459874e36",
+		"name": "ADMS Microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22018726"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Test user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8001/testUser",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"testUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Test order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8002/testOrder",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"testOrder"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventory",
+			"item": [
+				{
+					"name": "Test inventory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8003/testInventory",
+							"host": [
+								"localhost"
+							],
+							"port": "8003",
+							"path": [
+								"testInventory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gateway",
+			"item": [
+				{
+					"name": "Test Micro Services",
+					"item": [
+						{
+							"name": "Test User",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/user/testUser",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"user",
+										"testUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test Order",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/order/testOrder",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"order",
+										"testOrder"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test Inventory",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/inventory/testInventory",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"inventory",
+										"testInventory"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test gateway",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/inventory/testInventory",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"inventory",
+								"testInventory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

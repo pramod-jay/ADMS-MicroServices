@@ -1,6 +1,6 @@
-var connection= require ('./../../service/connection');
+var connection= require ('../../service/connection');
 
-module.exports = async function user_service(req, res){
+module.exports = async function create_user(req, res){
     const query = "INSERT INTO `user`.`user` (`firstName`, `lastName`, `email`, `telNo`, `address`) VALUES ( (?), (?), (?),(?),(?));"
 
     const values = [

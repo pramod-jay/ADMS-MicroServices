@@ -10,9 +10,9 @@ dotenv.config();
 app.use(express.json());
 app.use(cors());
 
-app.use('/user', proxy('http://localhost:8001')); //User endpoint
-app.use('/order', proxy('http://localhost:8002'));
-app.use('/inventory', proxy('http://localhost:8003'));
+app.use('/user', proxy('http://localhost:8001')); //User endpoint //MySql
+app.use('/order', proxy('http://localhost:8002')); //PostgreSQL
+app.use('/inventory', proxy('http://localhost:8003')); //MongoDB
 
 // app.use('/', functions);
 

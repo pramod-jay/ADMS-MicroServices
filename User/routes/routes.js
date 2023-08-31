@@ -10,10 +10,12 @@ router.get('/testUser', (req, res) => {
     test(req, res);
 });
 
+//.........Create User...............
 router.post('/create_user',(req,res)=>{
     create_user(req,res);
 });
 
+//.........Update User...............
 router.post('/update_user',(req,res)=>{
     update_user(req,res);
 });

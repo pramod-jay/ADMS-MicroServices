@@ -14,22 +14,22 @@ router.get('/testUser', (req, res) => {
 });
 
 //.........Create User...............
-router.post('/create_user',(req,res)=>{
+router.post('/user',(req,res)=>{
     create_user(req,res);
 });
 
 //.........Update User...............
-router.post('/update_user',(req,res)=>{
+router.put('/user',(req,res)=>{
     update_user(req,res);
 });
 
 //.........Delete User...............
-router.post('/delete_user',(req,res)=>{
+router.delete('/user',(req,res)=>{
     delete_user(req,res);
 });
 
-//.........Delete User...............
-router.post('/view_user',(req,res)=>{
+//.........view User...............
+router.get('/user',(req,res)=>{
     view_user(req,res);
 });
 

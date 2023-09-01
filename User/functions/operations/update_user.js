@@ -21,3 +21,8 @@ module.exports = async function update_user(req,res){
         }
     })
 }
+
+// select the user details and take number of updates along with the key so "UPDATE `user`.`user` SET (?) = (?), like wise take the key and updated data 
+//`lastName` = (?), `email`=(?), `telNo`=(?),`address`=(?)
+// WHERE (`userID` = (?));"" condition is same like this 
+//use a loop

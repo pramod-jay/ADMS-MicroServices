@@ -7,9 +7,9 @@ module.exports = async function test(req, res) {
 
         const query = req.body;
 
-        const options = { projection:  {}};
+        const options = { projection: { _id: 0,  firstName: 1, lastName: 1 }};
 
-        const response = await inventory.findOne(query, {projection: { _id: 0,  firstName: 1, lastName: 1 }});
+        const response = await inventory.findOne(query, options);
 
         console.log("Data fetched successfully");
 

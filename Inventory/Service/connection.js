@@ -2,9 +2,14 @@ const mongo = require('mongodb');
 const dotenv = require("dotenv");
 
 dotenv.config();
+    var connection;
 
-const client = new mongo.MongoClient(process.env.MONGO_URI);
-
-const connection = client.db('Inventory');
+    try {
+        const client = new mongo.MongoClient(process.env.MONGO_URI);
+        connection = client.db('Inventory');  
+        console.log("Connected to Inventory database.");
+    } catch (error) {
+        console.log(error);
+    };
 
 module.exports = connection;

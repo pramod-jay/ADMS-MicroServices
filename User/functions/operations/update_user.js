@@ -27,46 +27,46 @@ module.exports = async function update_user(req, res) {
       }
 
 
-      let query = "UPDATE `user`.`user` SET ";
-      let values = [];
+      let updateUserQuery = "UPDATE `user`.`user` SET ";
+      let updateUserValues = [];
       let fieldsToUpdate = [];
 
 
       if (req.body.firstName) {
         fieldsToUpdate.push("`firstName` = (?)");
-        values.push(req.body.firstName);
+        updateUserValues.push(req.body.firstName);
       }
 
       if (req.body.lastName) {
         fieldsToUpdate.push("`lastName` = (?)");
-        values.push(req.body.lastName);
+        updateUserValues.push(req.body.lastName);
       }
 
       if (req.body.email) {
         fieldsToUpdate.push("`email` = (?)");
-        values.push(req.body.email);
+        updateUserValues.push(req.body.email);
       }
 
       if (req.body.telNo) {
         fieldsToUpdate.push("`telNo` = (?)");
-        values.push(req.body.telNo);
+        updateUserValues.push(req.body.telNo);
       }
 
       if (req.body.address) {
         fieldsToUpdate.push("`address` = (?)");
-        values.push(req.body.address);
+        updateUserValues.push(req.body.address);
       }
 
 
-      values.push(req.body.userID);
+      updateUserValues.push(req.body.userID);
 
-      query += fieldsToUpdate.join(', ');
+      updateUserQuery += fieldsToUpdate.join(', ');
 
-      query += " WHERE (`userID` = (?));";
+      updateUserQuery += " WHERE (`userID` = (?));";
 
-      connection.query(query, values, (err, data) => {
-        if (err) {
-          console.log(err);
+      connection.query(updateUserQuery, updateUserValues, (updateUserErr, updateUserData) => {
+        if (updateUserErr) {
+          console.log(updateUserErr);
           return res.status(500).json({ error: 'Failed to update user' });
 
         } else {

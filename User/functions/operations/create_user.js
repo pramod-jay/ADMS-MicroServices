@@ -1,9 +1,9 @@
 var connection= require ('../../service/connection');
 
 module.exports = async function create_user(req, res){
-    const query = "INSERT INTO `user`.`user` (`firstName`, `lastName`, `email`, `telNo`, `address`) VALUES ( (?), (?), (?),(?),(?));"
+    const createUserQuery = "INSERT INTO `user`.`user` (`firstName`, `lastName`, `email`, `telNo`, `address`) VALUES ( (?), (?), (?),(?),(?));"
 
-    const values = [
+    const createUserValues = [
         req.body.firstName,
         req.body.lastName,
         req.body.email,
@@ -12,9 +12,9 @@ module.exports = async function create_user(req, res){
 
     ]
 
-    connection.query(query,values,(err,data)=>{
-        if(err){
-            console.log(err);
+    connection.query(createUserQuery,createUserValues,(createUserErr,createUserData)=>{
+        if(createUserErr){
+            console.log(createUserErr);
             return res.status(500).json({ error: 'Failed to create user' }); //error on the server and the request could not be generated
         }else{
             return res.status(201).json({ message: 'User created successfully' }); //Created. The request has been fulfilled

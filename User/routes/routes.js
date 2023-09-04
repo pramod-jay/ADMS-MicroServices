@@ -23,14 +23,16 @@ router.put('/user',(req,res)=>{
     update_user(req,res);
 });
 
+//.........view User...............
+router.get('/user',(req,res)=>{
+    view_user(req,res);
+});
+
 //.........Delete User...............
 router.delete('/user',(req,res)=>{
     delete_user(req,res);
 });
 
-//.........view User...............
-router.get('/user',(req,res)=>{
-    view_user(req,res);
-});
+
 
 module.exports = router;

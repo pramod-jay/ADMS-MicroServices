@@ -10,9 +10,16 @@ module.exports = async function view_user(req,res){
     connection.query(query,values,(err,data)=>{
         if(err){
             console.log(err);
-            return res.status(500).json({ error: 'Failed to delete user' }); 
+            return res.status(500).json({ error: 'Failed to fetch user' }); 
+
         }else{
-            return res.status(201).json({ message: 'User deleted successfully' });
+            if(data.length ===0){
+                return res.status(404).json({error:'User not found'})
+                
+            }else{
+                const user= data[0];
+                return res.status(200).json({ user });
+            }
         }
     })
 }

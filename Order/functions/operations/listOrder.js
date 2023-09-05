@@ -9,7 +9,7 @@ module.exports = async function listOrder(req ,res){
         const result = await connection.query(query, [order_id]);
 
         if(result.rowCount!=0){
-            return res.json(result.rows);
+            return res.json(result.rows[0]);
         }else{
             return res.json('There are no any orders');
         }

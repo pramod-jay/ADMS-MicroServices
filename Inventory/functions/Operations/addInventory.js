@@ -8,9 +8,9 @@ module.exports = async function addInventory(req, res) {
             console.log("Already seved item");
             return res.json("This item has been already saved");
         } else {
-            const inventory = new schema(req.body);
+            const newInventory = new schema(req.body);
             try {
-                await inventory.save();
+                await newInventory.save();
                 return res.json('Inventory insertion successfull');
             } catch (error) {
                 console.log(error);

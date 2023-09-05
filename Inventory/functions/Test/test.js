@@ -1,3 +1,5 @@
+const connection = require('./../../Service/connection');
+
 module.exports = async function test(req, res) {
-    return res.json('Test respond from inventory');
-};
+    return res.json('This is test response')
+};  

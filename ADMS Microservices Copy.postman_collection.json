@@ -1,0 +1,560 @@
+{
+	"info": {
+		"_postman_id": "5f75ed8a-1e52-4e96-9764-2164b7430713",
+		"name": "ADMS Microservices Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29409577"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Test user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8001/testUser",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"testUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Test order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8002/testOrder",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"testOrder"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventory",
+			"item": [
+				{
+					"name": "Test inventory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8003/testInventory",
+							"host": [
+								"localhost"
+							],
+							"port": "8003",
+							"path": [
+								"testInventory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gateway",
+			"item": [
+				{
+					"name": "Test Micro Services",
+					"item": [
+						{
+							"name": "Test User",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/user/testUser",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"user",
+										"testUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test Order",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/order/testOrder",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"order",
+										"testOrder"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test Inventory",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8000/inventory/testInventory",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"inventory",
+										"testInventory"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test gateway",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/inventory/testInventory",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"inventory",
+								"testInventory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Crud",
+			"item": [
+				{
+					"name": "Order",
+					"item": [
+						{
+							"name": "Add order",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidWRkaUBnbWFpbC5jb20iLCJpYXQiOjE2ODM0NjAyMjQsImV4cCI6MTY4MzU0NjYyNH0.2Wx2crsEGOlg0enaGE2H3SEAhwwLWl9Onwb1WmIllPY",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \"order_id\":16,\r\n    \"order_qty\": 5,\r\n    \"order_time\": \"2023-09-03 10:20:00\",\r\n    \"order_date\": \"2023-09-02\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/order/order",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"order",
+										"order"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete order",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"order_id\":16\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/order/order",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"order",
+										"order"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get order",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"order_id\":16\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/order/order",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"order",
+										"order"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update order",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \"order_id\":4,\r\n    \"order_qty\": 238,\r\n    \"order_time\": \"2023-09-03 10:20:00\",\r\n    \"order_date\": \"2023-09-02\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/order/order",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"order",
+										"order"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Inventory",
+					"item": [
+						{
+							"name": "Add Inventory",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "//Insert item\n{\n    \"itemId\": \"I005\",\n    \"itemName\": \"testItem\",\n    \"itemPrice\": 20,\n    \"quantityAvailable\": 10\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/Inventory/inventory",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"Inventory",
+										"inventory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Inventory",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "//Delete inventory using itemID\n{\n    \"itemId\": \"I005\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/Inventory/inventory",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"Inventory",
+										"inventory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Inventory",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "//Retrive inventory using itemID\n{\n    \"itemId\": \"I004\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/Inventory/inventory",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"Inventory",
+										"inventory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Inventory",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "//Update item using itemID\n{\n    \"itemId\": \"I005\",\n    \"itemName\": \"Chocolate\",\n    \"itemPrice\": 200.00,\n    \"quantityAvailable\": 100\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/Inventory/inventory",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"Inventory",
+										"inventory"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "List User",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "//View User Details\r\n{\r\n    \"userID\":5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8001/user",
+									"host": [
+										"localhost"
+									],
+									"port": "8001",
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "//Insert User\r\n{\r\n    \"firstName\":\"Guwen\",\r\n    \"lastName\":\"Jacob\",\r\n    \"email\":\"gjcob@gmail.com\",\r\n    \"address\":\"Negombo\",\r\n    \"telNo\":\"0312234223\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8001/user",
+									"host": [
+										"localhost"
+									],
+									"port": "8001",
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "//Delete User\r\n{\r\n    \"userID\":11\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8001/user",
+									"host": [
+										"localhost"
+									],
+									"port": "8001",
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "//Update User Details\r\n{\r\n    \"firstName\":\"Heshani\",\r\n    \"lastName\":\"Cardes\",\r\n    \"email\":\"heshani@gmail.com\",\r\n    \"address\":\"Matara\",\r\n    \"telNo\":\"0772245465\",\r\n    \"userID\":10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

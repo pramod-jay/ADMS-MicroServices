@@ -121,9 +121,21 @@
 						},
 						{
 							"name": "Test Inventory",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Pramod\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "localhost:8000/inventory/testInventory",
 									"host": [
@@ -154,6 +166,463 @@
 							"path": [
 								"inventory",
 								"testInventory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRUD",
+			"item": [
+				{
+					"name": "Inventory",
+					"item": [
+						{
+							"name": "Add Inventory",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "//Insert item\n{\n    \"itemId\": \"I005\",\n    \"itemName\": \"DVD Pack\",\n    \"itemPrice\": 20,\n    \"quantityAvailable\": 50\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/Inventory/inventory",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"Inventory",
+										"inventory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Inventory",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "//Delete inventory using itemID\n{\n    \"itemId\": \"I005\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/Inventory/inventory",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"Inventory",
+										"inventory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Inventory",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/Inventory/inventory?itemId=I010",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"Inventory",
+										"inventory"
+									],
+									"query": [
+										{
+											"key": "itemId",
+											"value": "I010",
+											"description": "Send itemID as a query parameter"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Inventory",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "//Update item using itemID\n{\n    \"itemId\": \"I005\",\n    \"itemName\": \"Chocolate\",\n    \"itemPrice\": 200.00,\n    \"quantityAvailable\": 100\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/Inventory/inventory",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"Inventory",
+										"inventory"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Order",
+					"item": [
+						{
+							"name": "Add order",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJidWRkaUBnbWFpbC5jb20iLCJpYXQiOjE2ODM0NjAyMjQsImV4cCI6MTY4MzU0NjYyNH0.2Wx2crsEGOlg0enaGE2H3SEAhwwLWl9Onwb1WmIllPY",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \"order_id\":8,\r\n    \"userId\": 7,\r\n    \"inventoryId\": [\"I001\", \"I003\"],\r\n     \"order_qty\": [3, 1]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/order/order",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"order",
+										"order"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete order",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"order_id\":16\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/order/order",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"order",
+										"order"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List order",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"order_id\":8\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/order/order",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"order",
+										"order"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update order",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \"order_id\":4,\r\n    \"order_qty\": 238,\r\n    \"order_time\": \"2023-09-03 10:20:00\",\r\n    \"order_date\": \"2023-09-02\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/order/order",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"order",
+										"order"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "List User",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/user/user?userID=6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"user",
+										"user"
+									],
+									"query": [
+										{
+											"key": "userID",
+											"value": "6",
+											"description": "Send userID as a query parameter"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "//Insert User\r\n{\r\n    \"firstName\":\"Guwen\",\r\n    \"lastName\":\"Jacob\",\r\n    \"email\":\"gjcob@gmail.com\",\r\n    \"address\":\"Negombo\",\r\n    \"telNo\":\"0312234223\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8001/user",
+									"host": [
+										"localhost"
+									],
+									"port": "8001",
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "//Delete User\r\n{\r\n    \"userID\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8001/user",
+									"host": [
+										"localhost"
+									],
+									"port": "8001",
+									"path": [
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "//Update User Details\r\n{\r\n    \"firstName\":\"Heshani\",\r\n    \"lastName\":\"Cardes\",\r\n    \"email\":\"heshani@gmail.com\",\r\n    \"address\":\"Matara\",\r\n    \"telNo\":\"0772245465\",\r\n    \"userID\":10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Other",
+			"item": [
+				{
+					"name": "Check orders available for inventory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/order/orderByUser?userId=7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								"orderByUser"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check orders available for user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/order/orderByInventory?inventoryId=I005",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"order",
+								"orderByInventory"
+							],
+							"query": [
+								{
+									"key": "inventoryId",
+									"value": "I005"
+								}
 							]
 						}
 					},

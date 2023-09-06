@@ -1,4 +1,8 @@
-var connection = require('../../service/connection');
+const connection = require('../../service/connection');
+const dotenv = require('dotenv');
+const axios = require('axios');
+
+dotenv.config();
 
 module.exports = async function delete_user(req, res) {
     if (!req.body.userID) {
@@ -8,17 +12,21 @@ module.exports = async function delete_user(req, res) {
     const checkUserQuery = "SELECT COUNT(*) AS count FROM `user`.`user` WHERE `userID` = (?);"
     const checkUserValues = [req.body.userID];
 
+    const userInOrder = await userExistInOrder(req.body.userID);
+
     connection.query(checkUserQuery, checkUserValues, (err, checkUserData) => {
         if (err) {
             console.log(err);
-            return res.status(500).json({ error: 'Failed to check user existance' });
+            return res.json('Failed to check user existance');
 
         } else {
             const userExists = checkUserData[0].count === 1;
 
             if (!userExists) {
-                return res.status(404).json({ error: 'User not found for deletion' });
+                return res.json('User not found for deletion');
             }
+
+            if(userInOrder==200) return res.json('User have orders. Cannot Delete');
 
             const deleteUserQuery = "DELETE FROM user.user WHERE userID=(?);"
 
@@ -29,12 +37,19 @@ module.exports = async function delete_user(req, res) {
             connection.query(deleteUserQuery, deleteUserValues, (deleteUserErr, deleteUserData) => {
                 if (deleteUserErr) {
                     console.log(deleteUserErr);
-                    return res.status(500).json({ error: 'Failed to delete user' });
+                    return res.json('Failed to delete user');
                 } else {
-                    return res.status(201).json({ message: 'User deleted successfully' });
-
+                    console.log(deleteUserData);
+                    return res.json('User deleted successfully');
                 }
             });
         }
     });
+
+    //Check whether user have orders
+    async function userExistInOrder(userID) {
+        const response = await axios.get(process.env.ORDER_SERVER + 'orderByUser', { params: { userId: userID } });
+        return response.data;
+    };
+
 };

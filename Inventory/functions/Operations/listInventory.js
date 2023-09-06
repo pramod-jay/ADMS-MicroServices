@@ -2,7 +2,6 @@ const schema = require('../../model/Model');
 
 module.exports = async function listInventory(req, res){
     try {
-        console.log(req.query);
         const inventory = await schema.findOne({itemId:req.query.itemId});
             if (inventory) {
                 console.log("Inventory exist")

@@ -9,6 +9,7 @@
   "author": "Pramod-jay",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.5.0",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "mysql": "^2.18.1",

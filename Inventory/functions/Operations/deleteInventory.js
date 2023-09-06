@@ -1,4 +1,5 @@
 const schema = require('../../model/Model')
+const axios = require('axios');
 
 
 module.exports = async function deleteInventory(req, res){
@@ -6,6 +7,10 @@ module.exports = async function deleteInventory(req, res){
         const exist = await inventoryExist();
 
         if(exist){
+            const inventoryInOrder = await inventoryExistInOrder(req.body.itemId);
+
+            if(inventoryInOrder==200) return res.json('Iventory have orders. Cannot Delete');
+
             schema.deleteOne(req.body)
             .then(function(){
                 console.log("Deleted succefully");
@@ -34,5 +39,11 @@ module.exports = async function deleteInventory(req, res){
             console.log(error);
             return res.json('Something went wrong');
         }
+    };
+
+    //Check whether inventory have orders
+    async function inventoryExistInOrder(inventoryId) {
+        const response = await axios.get(process.env.ORDER_SERVER + 'orderByInventory', { params: { inventoryId: inventoryId } });
+        return response.data;
     };
 };

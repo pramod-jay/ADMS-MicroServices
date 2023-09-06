@@ -13,27 +13,8 @@ var connection = mysql.createConnection({
 
 connection.connect(function(err){
     if(err) throw err;
-    console.log("Connected to User database.")
+    console.log("Connected to User database")
 });
 
-module.exports = connection
-
-
-// var mysql = require('mysql');
-
-// var connection=mysql.createConnection({
-//     host:"user-server.mysql.database.azure.com", 
-//     user:"VikingsAdmin", 
-//     password:"VAB20@1234", 
-//     database:"user", 
-//     port:3306, 
-//     // ssl:{ca:fs.readFileSync("{ca-cert filename}")}
-// });
-
-// connection.connect(function (err) {
-//     if(err) throw err;
-//     console.log("connected to User database");
-// });
-
-// module.exports = connection
+module.exports = connection;
 

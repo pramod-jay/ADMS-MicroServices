@@ -186,7 +186,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "//Insert item\n{\n    \"itemId\": \"I005\",\n    \"itemName\": \"DVD Pack\",\n    \"itemPrice\": 20,\n    \"quantityAvailable\": 50\n}",
+									"raw": "//Insert item\n{\n    \"itemId\": \"I006\",\n    \"itemName\": \"LCD Monitor\",\n    \"itemPrice\": 250.00,\n    \"quantityAvailable\": 20\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -214,7 +214,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "//Delete inventory using itemID\n{\n    \"itemId\": \"I005\"\n}",
+									"raw": "//Delete inventory using itemID\n{\n    \"itemId\": \"I006\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -253,7 +253,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8000/Inventory/inventory?itemId=I010",
+									"raw": "http://localhost:8000/Inventory/inventory?itemId=I007",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -266,7 +266,7 @@
 									"query": [
 										{
 											"key": "itemId",
-											"value": "I010",
+											"value": "I007",
 											"description": "Send itemID as a query parameter"
 										}
 									]
@@ -281,7 +281,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "//Update item using itemID\n{\n    \"itemId\": \"I005\",\n    \"itemName\": \"Chocolate\",\n    \"itemPrice\": 200.00,\n    \"quantityAvailable\": 100\n}",
+									"raw": "//Update item using itemID\n{\n    \"itemId\": \"I005\",\n    \"itemName\": \"DVD Pack\",\n    \"itemPrice\": 20.00,\n    \"quantityAvailable\": 100\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -331,7 +331,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{   \"order_id\":8,\r\n    \"userId\": 7,\r\n    \"inventoryId\": [\"I001\", \"I003\"],\r\n     \"order_qty\": [3, 1]\r\n}\r\n",
+									"raw": "//Test sript for create order\r\n//Put item id and quantity for respective item to the same element of two arrays\r\n{   \"order_id\":11,\r\n    \"userId\": 5,\r\n    \"inventoryId\": [\"I001\", \"I003\", \"I005\"],\r\n     \"order_qty\": [3, 1, 5]\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -370,7 +370,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"order_id\":16\r\n}",
+									"raw": "//Test sript for delete order\r\n{\r\n    \"order_id\":16\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -412,7 +412,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"order_id\":8\r\n}",
+									"raw": "//Test sript for retrive order\r\n{\r\n    \"order_id\":11\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -441,7 +441,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{   \"order_id\":4,\r\n    \"order_qty\": 238,\r\n    \"order_time\": \"2023-09-03 10:20:00\",\r\n    \"order_date\": \"2023-09-02\"\r\n}\r\n",
+									"raw": "//Test sript for update order\r\n//If update only quantity put same relevant itemId to the both ordered_item_id and new_item_id\r\n{\r\n    \"order_id\": 11,\r\n    \"ordered_item_id\": \"I003\",\r\n    \"new_item_id\": \"I002\",\r\n    \"quantity\": 2\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -510,12 +510,14 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:8001/user",
+									"raw": "http://localhost:8000/user/user",
+									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8001",
+									"port": "8000",
 									"path": [
+										"user",
 										"user"
 									]
 								}
@@ -529,7 +531,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "//Delete User\r\n{\r\n    \"userID\":1\r\n}",
+									"raw": "//Delete User\r\n{\r\n    \"userID\":13\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -537,12 +539,14 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:8001/user",
+									"raw": "http://localhost:8000/user/user",
+									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "8001",
+									"port": "8000",
 									"path": [
+										"user",
 										"user"
 									]
 								}
@@ -556,7 +560,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "//Update User Details\r\n{\r\n    \"firstName\":\"Heshani\",\r\n    \"lastName\":\"Cardes\",\r\n    \"email\":\"heshani@gmail.com\",\r\n    \"address\":\"Matara\",\r\n    \"telNo\":\"0772245465\",\r\n    \"userID\":10\r\n}",
+									"raw": "//Update User Details\r\n{\r\n    \"firstName\":\"Heshani\",\r\n    \"lastName\":\"Cardes\",\r\n    \"email\":\"heshani@gmail.com\",\r\n    \"address\":\"Matara\",\r\n    \"telNo\":\"0772245465\",\r\n    \"userID\":8\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -564,7 +568,16 @@
 									}
 								},
 								"url": {
-									"raw": ""
+									"raw": "http://localhost:8000/user/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"user",
+										"user"
+									]
 								}
 							},
 							"response": []

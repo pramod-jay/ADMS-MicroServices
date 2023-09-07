@@ -1,3 +1,5 @@
+//***This function belongs to update user***
+
 var connection = require("../../service/connection");
 
 module.exports = async function update_user(req, res) {

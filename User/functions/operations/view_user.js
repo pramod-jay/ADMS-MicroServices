@@ -1,3 +1,5 @@
+//***This function belongs to retrive user***
+
 var connection = require('../../service/connection');
 
 module.exports = async function view_user(req, res) {

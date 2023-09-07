@@ -1,3 +1,5 @@
+//***This function belongs to create new inventory***
+
 const schema = require('../../model/Model');
 
 
@@ -6,7 +8,7 @@ module.exports = async function addInventory(req, res) {
         const exist = await inventoryExist(); //Check item alredy inserted one or not
         if (exist) {
             console.log("Already seved item");
-            return res.json("This item has been already saved");
+            return res.json("This item has already saved");
         } else {
             const newInventory = new schema(req.body);
             try {

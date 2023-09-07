@@ -1,3 +1,5 @@
+//***This function belongs to create new user***
+
 var connection= require ('../../service/connection');
 
 module.exports = async function create_user(req, res){

@@ -1,8 +1,9 @@
+//***This function belongs to delete order***
+
 const connection = require('./../../Service/connection');
 
 module.exports = async function deleteOrder(req, res){
-    // Define a route to delete an order by order_id
-        const { order_id } = req.body; // Extract order_id from the URL parameter
+        const { order_id } = req.body; 
 
         if (!order_id) {
             res.status(400).json({ error: 'Missing order_id parameter' });

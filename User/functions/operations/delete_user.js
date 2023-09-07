@@ -1,3 +1,5 @@
+//***This function belongs to delete user***
+
 const connection = require('../../service/connection');
 const dotenv = require('dotenv');
 const axios = require('axios');

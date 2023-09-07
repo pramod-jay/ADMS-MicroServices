@@ -1,6 +1,7 @@
+//***This function belongs to delete inventory***
+
 const schema = require('../../model/Model')
 const axios = require('axios');
-
 
 module.exports = async function deleteInventory(req, res){
     try{

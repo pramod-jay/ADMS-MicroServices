@@ -1,3 +1,5 @@
+//***This function belongs to retrive inventory***
+
 const schema = require('../../model/Model');
 
 module.exports = async function listInventory(req, res){

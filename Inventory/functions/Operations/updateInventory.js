@@ -1,3 +1,6 @@
+//***This function belongs to update inventory***
+
+
 const schema = require('../../model/Model');
 
 

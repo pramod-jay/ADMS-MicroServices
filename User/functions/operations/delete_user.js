@@ -19,7 +19,7 @@ module.exports = async function delete_user(req, res) {
     connection.query(checkUserQuery, checkUserValues, (err, checkUserData) => {
         if (err) {
             console.log(err);
-            return res.json('Failed to check user existance');
+            return res.json('Failed to check user existence');
 
         } else {
             const userExists = checkUserData[0].count === 1;

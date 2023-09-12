@@ -13,10 +13,10 @@ module.exports = async function addInventory(req, res) {
             const newInventory = new schema(req.body);
             try {
                 await newInventory.save();
-                return res.json('Inventory insertion successfull');
+                return res.json('Inventory insertion successful');
             } catch (error) {
                 console.log(error);
-                return res.json('Inventory insertion unsuccessfull');
+                return res.json('Inventory insertion unsuccessful');
             }
         }
     } catch (error) {

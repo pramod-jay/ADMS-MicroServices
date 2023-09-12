@@ -10,23 +10,23 @@ module.exports = async function deleteInventory(req, res){
         if(exist){
             const inventoryInOrder = await inventoryExistInOrder(req.body.itemId);
 
-            if(inventoryInOrder==200) return res.json('Iventory have orders. Cannot Delete');
+            if(inventoryInOrder==200) return res.json('Inventories have orders. Cannot Delete.');
 
             schema.deleteOne(req.body)
             .then(function(){
                 console.log("Deleted succefully");
-                return res.json("Inventory has been deleted succefully")
+                return res.json("Inventory has been deleted successfully.")
             }).catch(function(error){
                 onsole.log(error);
-                return res.json("Something went wrong");
+                return res.json("Something went wrong.");
             })
         }else{
             console.log("Not exist");
-            return res.json("Inventory does not exist");
+            return res.json("Inventory does not exist.");
         }
     }catch(error){
         console.log(error);
-        return res.json("Something went wrong");
+        return res.json("Something went wrong.");
     }
 
 

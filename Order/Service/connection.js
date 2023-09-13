@@ -18,7 +18,7 @@ const {Client} = require("pg");
 
     client.connect()
     .then(() => {
-        console.log('Connected to PostgreSQL');
+        console.log('Connected to Order database');
     })
     .catch((error) => {
         console.error('Error connecting to PostgreSQL:', error);

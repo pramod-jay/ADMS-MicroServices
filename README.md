@@ -7,7 +7,7 @@ This project was implemented to get an understanding of Microservices. ADMS-Micr
 
 ### Build With
 The project is implemented using the following frameworks and Databases
-* [<imge src="https://www.flaticon.com/free-icon/nodejs_919825?term=nodejs&page=1&position=2&origin=search&related_id=919825" align="left" alt="nodeJS">]Node
+* [<img src="https://www.flaticon.com/free-icon/nodejs_919825?term=nodejs&page=1&position=2&origin=search&related_id=919825" align="left" alt="nodeJS"/>]Node
 * MySQL
 * PostgreSQL
 * MongoDB

@@ -60,7 +60,7 @@ Successful completion of importing will result in the ‘ADMS Microservices’ f
 #### Contributors
 [![Pramod Jayathilaka](https://img.shields.io/badge/Pramod%20Jayathilaka-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/pramod-jayathilaka-b57178137/)
 [![Nathali Fernando](https://img.shields.io/badge/Nathali%20Fernando-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/nathali-fernando-69aa74248/)
-[![Shenal Goonawardena](https://img.shields.io/badge/Shenal%20Goonawarena-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/shenalwgoonewardena/)
+[![Shenal Goonawardena](https://img.shields.io/badge/Shenal%20Goonawardena-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/shenalwgoonewardena/)
 [![Lasantha Weerasinghe](https://img.shields.io/badge/Lasantha%20Weerasinghe-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/lasantha-pradeep-b33939223/)
 [![Buddima Dissanayake](https://img.shields.io/badge/Buddima%20Dissanayake-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/buddima-eranga-175381266/)
 

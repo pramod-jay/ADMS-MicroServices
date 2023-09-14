@@ -58,11 +58,11 @@ Successful completion of importing will result in the ‘ADMS Microservices’ f
 ##### Group Name: Vikings
 
 #### Contributors
-##### Pramod Jayathilaka: <a  href="www.linkedin.com/in/pramod-jayathilaka-b57178137">LinkedIn/Pramod</a>
-##### Nathali Fernando: <a  href="www.linkedin.com/in/nathali-fernando-69aa74248">LinkedIn/Nathali</a>
-##### Shenal Goonawardena: <a  href="www.linkedin.com/in/shenalwgoonewardena">LinkedIn/Shenal</a>
-##### Lasantha Weerasinghe: <a  href="www.linkedin.com/in/lasantha-pradeep-b33939223">LinkedIn/Lasantha</a>
-##### Buddima Eranga: <a  href="www.linkedin.com/in/buddima-eranga-175381266">LinkedIn/Buddima</a>
+##### Pramod Jayathilaka: <a  href="https://www.linkedin.com/in/pramod-jayathilaka-b57178137">LinkedIn/Pramod</a>
+##### Nathali Fernando: <a  href="https://www.linkedin.com/in/nathali-fernando-69aa74248">LinkedIn/Nathali</a>
+##### Shenal Goonawardena: <a  href="https://www.linkedin.com/in/shenalwgoonewardena">LinkedIn/Shenal</a>
+##### Lasantha Weerasinghe: <a  href="https://www.linkedin.com/in/lasantha-pradeep-b33939223">LinkedIn/Lasantha</a>
+##### Buddima Eranga: <a  href="https://www.linkedin.com/in/buddima-eranga-175381266">LinkedIn/Buddima</a>
 
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/pramod-jay/ADMS-MicroServices.git)

@@ -1,6 +1,8 @@
 # ADMS-MicroServices
 This repository contains the implementation of a microservices architecture for the IN3400-Advanced Database Management System course assignment. The goal of this assignment is to design and develop three microservices that collectively demonstrate advanced database management concepts through a distributed application.
 
+![Top_Level drawio](https://github.com/pramod-jay/ADMS-MicroServices/assets/91390000/041c5409-db27-4020-aefe-c9d05d9dcd14)
+
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 This project was implemented to get an understanding of Microservices. ADMS-Microservices includes three microservices naming user management, order placement and inventory management. The ultimate goal is to place an order for a particular user based on the items available in the inventory. Apart from that each microservice has basic operations of CREATE, UPDATE, VIEW and DELETE.
